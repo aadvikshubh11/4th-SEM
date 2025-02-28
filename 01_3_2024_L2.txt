@@ -1,0 +1,216 @@
+# implementation of Encapsulation/ abstraction
+class Employee
+{
+ private int empid;
+private String name;
+private double salary;
+
+public void setId(int id)
+{
+empid=id;
+}
+
+public void setName(String name)
+{
+this.name=name;
+
+}
+
+public void setSalary(double sal)
+{
+salary=sal;
+}
+
+public void  getEmployeeDetails()
+  
+{
+System.out.println("id  =" + empid+"Name="+name+"   " + "salary is "+salary);
+
+}
+
+}//class
+
+public class EmployeeDemo
+{
+public static void main(String args[])
+{
+
+Employee emp =new Employee();//Employee object
+//System.out.println("id="+ emp.empid); //  compiler error trying to access private member
+
+emp.setId(100); //mutator
+emp.setName("Anu");
+emp.setSalary(1000);
+emp.getEmployeeDetails();//accessor 
+
+}
+}//class EmployeeDemo
+.............................................
+#2  Differentiate between local and instance variable by this keyword
+class thistest
+{
+String s="instance variable";
+
+void view()
+{
+String s="local variable";
+System.out.println("s="+s);
+System.out.println("this s="+this.s);
+
+}
+public static void main(String s[])
+{
+thistest t=new thistest();
+t.view();
+}
+}
+................................................
+#3  static variable (common to all objects) 
+
+class statictest
+{
+int x=0;
+//static int x=0;
+
+statictest()
+{
+x++;
+}
+
+void print()
+{
+System.out.println("I am object no="+x);
+}
+
+public static void main(String s[])
+{
+ for(int i=1;i<=5;i++)
+   new statictest().print();
+ 
+//System.out.println("I am object no="+x);
+//non-static(object specific) cant be accessed from static context(class specific)
+}
+}
+..............................................
+#4  static method ( class method)
+class calc
+{
+static int add(int a,int b)
+{
+return (a+b);
+}
+static int sub(int a,int b)
+{
+return (a-b);
+}
+
+public static void main(String s[])
+{
+
+System.out.println(calc.add(10,20)); // class method
+System.out.println(calc.sub(10,20));
+
+}
+}
+...........................................
+#5  static block (initialise static var invoked before main()during the CLASS LOADER loads the class) 
+class Ex
+{
+static int num;
+static String str;
+static{
+  System.out.println("static block 1");
+   num=1;
+   str="Block1";
+}
+    
+static{
+  System.out.println("static block 2");
+   num=2;
+   str="Block2";
+  }
+public static void main(String s[])
+{
+
+System.out.println("num=  "+ num);
+System.out.println("string=  "+str);
+
+}
+}
+..
+............................................
+
+#6 inhertance  ( extends )
+
+class Base
+{
+public void print()
+{
+System.out.println("I am Superclass");
+}
+}
+
+public class Derived extends  Base
+{
+public void printSuper()
+{
+super.print();
+}
+public void print()
+{
+System.out.println("I am Derived class");
+}
+
+public static void main(String s[])
+{
+
+Derived d=new Derived();
+d.printSuper();
+d.print();
+
+}
+
+}
+............................................
+#7 instanceof 
+
+class Flower
+{
+   Flower()
+  {
+  System.out.println("object is created");
+  }
+
+}
+
+class Fruit extends Flower
+{
+}
+
+public class testinstance
+{
+
+public static void main(String s[])
+
+{
+  Flower rose=new Flower();
+
+if(rose instanceof Flower)
+
+System.out.println("Rose is an instance of flower --true");
+else
+  
+System.out.println("Rose is an instance of flower-- false");
+
+
+
+if(rose instanceof Fruit)
+
+System.out.println("Rose is an instance of Flower--true");
+else
+
+ System.out.println(" Rose is an instance of Fruit --false");
+}
+}
+
+
