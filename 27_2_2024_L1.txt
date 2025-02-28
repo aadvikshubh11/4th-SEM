@@ -1,0 +1,142 @@
+#1 getter & setter methods
+class Employee
+{
+ int empid;
+ String name;
+ double salary;
+
+void setId(int id)
+{
+empid=id;
+}
+
+void setName(String name)
+{
+this.name=name;
+
+}
+
+void setSalary(double sal)
+{
+salary=sal;
+}
+
+void  getEmployeeDetails()
+  
+{
+System.out.println("id  =" + empid+"Name="+name+"   " + "salary is "+salary);
+
+}
+
+}//class
+
+public class EmployeeDemo
+{
+public static void main(String args[])
+{
+
+Employee emp=null;// reference
+System.out.println("Reference="+ emp);
+emp =new Employee();//Employee object
+System.out.println("Object="+ emp);
+
+emp.setId(100);
+emp.setName("Anu");
+emp.setSalary(1000);
+
+emp.getEmployeeDetails();
+
+}
+
+}//class EmployeeDemo
+  
+ .................................................... 
+#2   Constructor  
+class Emp_cons
+{
+int empid;
+String name;
+double salary;
+
+Emp_cons() // NoArgument constructor
+{
+empid=10;
+name="Gargi";
+salary=1000;
+}
+
+
+Emp_cons(int id,String nm,double sal) // Parameterised constructor
+{
+empid=id;
+name=nm;
+salary=sal;
+}
+
+
+
+void display()
+{
+System.out.println("Name="+name+"   " + "salary is "+salary);
+
+}
+
+}//class
+
+public class ConstructorDemo
+{
+public static void main(String args[])
+{
+
+Emp_cons emp;// reference
+//System.out.println("Reference="+ emp);
+emp =new Emp_cons(10,"Amrit",1000);//Employee object
+System.out.println("Object="+ emp);
+Emp_cons emp1=new Emp_cons();
+
+System.out.println("Name="+emp.name+"   " + "salary is "+emp.salary);
+emp1.display();
+
+}
+
+}//class Constructor Demo
+  
+  
+  
+  ...............................................
+#3 Object vs reference
+
+class ref
+{
+  int a;
+  
+  void display()
+  {
+  System.out.println("a= " + a);
+   
+  }
+}
+
+public class refDemo
+{
+ public static void main(String s[])
+ {
+    ref r1=null;
+    ref r2= new ref();
+    r1=r2;
+   System.out.println(" r1 ="+ r1);
+    System.out.println(" r2 ="+ r2);
+    System.out.println(" r1.a ="+ r1.a);
+     System.out.println(" r2.a ="+ r2.a);
+ 
+    r2.a=1;
+     System.out.println("After r1.a ="+ r1.a);
+    System.out.println(" after r2.a ="+ r2.a);
+ 
+ 
+ }
+ 
+  
+  
+}
+  
