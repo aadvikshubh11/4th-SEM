@@ -1,0 +1,143 @@
+# 1 StringBuffer class
+class Stringbuff
+{
+  public static void main(String args[])
+  {
+  
+  StringBuffer s1=new StringBuffer();
+  StringBuffer s2=new StringBuffer(10);
+  StringBuffer s3=new StringBuffer("java");
+  
+  System.out.println("content of s1"+s1);
+  System.out.println(s1.length());//no. of characters it contains
+  System.out.println(s1.capacity());//is the number of characters, it can contain without being expanded
+
+  System.out.println("content of s2"+s2);
+  System.out.println(s2.length());
+  System.out.println(s2.capacity());
+  s2.append("Java is");
+  
+  System.out.println(s2.length());
+  System.out.println(s2.capacity());
+  System.out.println("content of s3"+s3);
+  System.out.println(s3.length());
+  System.out.println(s3.capacity());
+  
+  
+  s3.append(" is ");
+  System.out.println(s3);
+  s3.reverse();
+  System.out.println(s3);  
+    s2.append("100% OOPs");
+  System.out.println(s2.length());
+  System.out.println(s2.capacity());
+  }
+}
+#2 String class
+class stringmethod
+{
+  public static void main(String args[])
+  {
+    String s="Test of String";
+     String test="abcdefgh";  
+    String s1;
+   System.out.println(s.toLowerCase());
+ System.out.println(s);
+ s1= s.toLowerCase();
+ System.out.println("s1="+s1);
+ System.out.println(test.toUpperCase());
+   System.out.println(test);
+System.out.println(test.substring(3));
+ System.out.println(test.substring(0,3));
+System.out.println(test.substring(2,4));
+System.out.println(test.substring(3,3));
+ 
+ 
+String a[]={"Haldia", "Institute", "of","technology"};
+System.out.println(a.length);// array length
+  System.out.println(test.length());// string length
+ 
+  
+  System.out.println(test.indexOf('d'));
+  System.out.println(s.indexOf('t'));// first occurance
+   
+ System.out.println(s.charAt(2));   
+ System.out.println(s.replace('T','F'));// String objects are immutable, can't be altered
+ System.out.println(s);
+  }
+}
+
+#3 Immutability property  String
+class CheckString
+{
+  public static void main(String s[])
+  {
+String name="navin";
+name=name+" gupta";
+System.out.println("name=  "+ name);
+String s1="Navin";
+String s2="Navin";
+System.out.println(s1==s2);
+  }
+}
+#4 Difference between equals method and == operator
+class eql
+{
+  public static void main(String args[])
+  {
+    String s1="java";
+    String s2="JAVA";
+ String s3=new String(s1);//s1 s3 have diff reference
+ String s4;
+ s4=s1;//same reference
+ System.out.println("S1="+s1);// java
+ System.out.println("S2="+s2);//JAVA
+System.out.println("s3="+s3);//java
+ System.out.println(s1+"  equals "+s2+s1.equals(s2));
+ System.out.println(s1+"  equals "+s2+s1.equalsIgnoreCase(s2));
+ System.out.println("equals the content  "+ s1.equals(s3));// true 
+ System.out.println("compare reference "+ (s1==s3));//false
+  System.out.println("compare reference "+ (s1==s4));//true
+  }
+  
+  //concat(), trim(), toString(),valueOf()
+}
+
+
+#5 package creation
+package complex;
+public class complexNumber
+{int real,image;
+  public complexNumber()
+  {}
+  public complexNumber(int r,int i)
+  {
+  real=r;
+  image=i;
+   }
+  public void complexAdd(complexNumber c1,complexNumber c2)
+  {
+  real=c1.real+c2.real;
+  image=c1.image+c2.image;
+  }
+public void view()
+  {
+ System.out.println(real+"+i"+image); 
+  }
+}
+#6  import package
+
+import complex.complexNumber;
+class comp
+{
+public static void main(String s[])
+{
+complexNumber a=new complexNumber(3,2);  
+complexNumber b=new complexNumber(1,3); 
+a.view();
+b.view();
+complexNumber c=new complexNumber();
+c.complexAdd(a,b);
+c.view();
+}
+}
